@@ -10,10 +10,10 @@ COPY superset_config.py .
 
 CMD superset run -p $PORT --with-threads --reload --debugger --host=0.0.0.0
 
-RUN superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
+# RUN superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
 
-RUN superset db upgrade
+# RUN superset db upgrade
 
-RUN superset load_examples
+# RUN superset load_examples
 
-RUN superset init
+# RUN superset init
