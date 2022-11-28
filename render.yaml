@@ -13,5 +13,5 @@ services:
     value: 10000
   - key: SECRET_KEY
     generateValue: true
-databases:
-- name: superset
+# databases:
+# - name: superset
