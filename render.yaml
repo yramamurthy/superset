@@ -3,7 +3,7 @@ services:
   name: superset
   env: docker
   autoDeploy: false
-  healthCheckPath: /healthz
+  healthCheckPath: /health
   envVars:
   - key: DATABASE_URL
     fromDatabase:
