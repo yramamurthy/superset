@@ -1,22 +1,17 @@
 services:
 - type: web
-  name: hasura
+  name: superset
   env: docker
   autoDeploy: false
   healthCheckPath: /healthz
   envVars:
-  - key: HASURA_GRAPHQL_DATABASE_URL
+  - key: DATABASE_URL
     fromDatabase:
-      name: hasura
+      name: superset
       property: connectionString
-  - key: HASURA_GRAPHQL_ENABLE_CONSOLE
-    value: true
   - key: PORT
     value: 10000
-# Uncomment to automatically generate an admin secret
-# for your Hasura instance. The value is visible under
-# Environment on the Render dashboard.
-#  - key: HASURA_GRAPHQL_ADMIN_SECRET
-#    generateValue: true
+  - key: SECRET_KEY
+    generateValue: true
 databases:
-- name: hasura
+- name: superset
